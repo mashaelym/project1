@@ -1,15 +1,19 @@
 <?php
+//done
 
 class HTMLTable extends Page
 {
-   
+  
    public function get()
    {
-    // I might need to change this .. 
-     $table = '<table>';
-     $table .= '<tr><td> test </td></tr>';
-     $table .= '</table> ';
+     $request     = new Request();
+     $FileName = $this->getRequest()->getHTTPRequest()->getParameter('filename');
+     $parse       = new CSVParser('./uploads/' . $FileName);
+     $table       = '<table>';
+     $table      .= '<tr><td> test </td></tr>';
+     $table      .= '</table> ';
      $this->html .= $table;
+     $this->html .=$parse;
    }
    
    public function post()
