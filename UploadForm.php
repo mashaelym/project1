@@ -1,5 +1,5 @@
 <?php
-
+//commit this!!
 class UploadForm extends Page
 {
 
@@ -15,7 +15,15 @@ class UploadForm extends Page
 
    public function post()
    {   
-
+      $fileUploadRequest = $this->getRequest()->getFileUploadRequest();     
+      $fileUploader= new FileUploader($fileUploadRequest);
+      $fileUploader->moveFile();
+      $urlParams = array(
+              'page' => 'HTMLTable', 
+              'filename' => $this->getRequest()->getFileUploadRequest()->getOriginalFileName()
+               );
+     
+    Redirector::redirect($urlParams);
    }
 
 }
