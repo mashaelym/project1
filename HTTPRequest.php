@@ -1,5 +1,5 @@
 <?php
-
+//new stuff, commit this!
 class HTTPRequest
 {
 	private $httpRequestArray;
@@ -15,7 +15,6 @@ class HTTPRequest
 		{
 			return $this->httpRequestArray[$httpParamName];
 		}
-		
 	}
 }
 	

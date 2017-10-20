@@ -1,15 +1,15 @@
 <?php
-
+//done
 class FileUploadRequest
 {
 	private $fileUploadArray;
+	const UPLOAD_PATH = './uploads/';
 	
 	public function __construct(array $fileUploadArray)
 	{
 		$this->fileUploadArray = $fileUploadArray;
 	}
 	
-	//Note to self: refactor to make it work with any file input name
 	// to get the original name
 	public function getOriginalFileName()
 	{
@@ -24,6 +24,11 @@ class FileUploadRequest
 	public function getFileType()
 	{
 		return $this->fileUploadArray['fileToUpload']['type'];
+	}
+
+	public function getUploadPath()
+	{
+		return self::UPLOAD_PATH;
 	}
 }
 

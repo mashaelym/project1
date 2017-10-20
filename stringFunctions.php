@@ -5,9 +5,9 @@ class stringFunctions
         {
                return print($inputText);
          }
-	 static public function stringLength($text) 
-	 {
-		return strLen($text);
-	  }	
+	// static public function stringLength($text) 
+	 //{
+		//return strLen($text);
+	  //}	
     }
 ?>
