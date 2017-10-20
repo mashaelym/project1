@@ -1,24 +1,19 @@
 <?php
-
+//done
 class CSVParser
-{
-private $OriginalFileName;
-public function __construct(FileUploadRequest $OriginalFileName)
-{
-	$this->OriginalFileName = $OriginalFileName;
-	$OriginalFileName = $this->OriginalFileName->getOriginalFileName();
-}
-  
-	  public function parseCSV()
+{  
+	  public static function parseCSV($OriginalFileName)
 	  {
-		$file = fopen($this->$OriginalFileName, 'r');
+
+	  	$lines=array();
+		$file = fopen($OriginalFileName, 'r');
 		while (($line = fgetcsv($file)) !== FALSE) 
 		{
-			$r=print_r($line); // put  into an array
+			$lines[]=$line;
 		}
 		fclose($file);
 		
-		return $r; //return an array
+		return $lines; //return an array
 	  }	
 }
 
